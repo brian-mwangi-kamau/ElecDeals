@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadget List</title>
+</head>
+<body>
+    <h1>Gadget List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gadget in gadgets %}
+                <tr>
+                    <td>{{ gadget.item_id }}</td>
+                    <td>{{ gadget.item_name }}</td>
+                    <td>{{ gadget.item_description }}</td>
+                    <td>
+                        <img src="{{ gadget.item_image }}" alt="{{ gadget.item_name }}" width="100" height="100">
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
