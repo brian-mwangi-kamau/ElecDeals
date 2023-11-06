@@ -1,0 +1,92 @@
+@media (min-width: 100px) and (max-width: 900px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        background-color: #e1d9d9;
+    }
+
+    header {
+        background-color: #e1d9d9;
+        padding: 20px;
+    }
+
+    /* Style for the top bar with menu and notifications icons */
+    .top-bar {
+        height: 26px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e5e0e0;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .top-bar .site-icon a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+    .top-bar .profile-icon i {
+        color: black;
+        font-size: x-large;
+    }
+
+    .menu-icon .fa-times {
+        display: none;
+    }
+
+    /* Style for the menu links */
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 110%;
+        right: 3%;
+        background-color: #ada1a1;
+        width: 200px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        align-items: center;
+        text-align: start;
+    }
+
+    .menu-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-links li {
+        margin-bottom: 10px;
+    }
+
+    .menu-links a {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-decoration: none;
+        color: black;
+        transition: color 0.2s;
+    }
+
+    .menu-links a:hover {
+        color: #fff;
+    }
+
+    .menu-links p {
+        margin-bottom: 10px;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: lighter;
+        color: #fff;
+        text-decoration: dotted;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+}

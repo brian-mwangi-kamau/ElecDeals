@@ -2,30 +2,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gadget List</title>
+    <title>ElecDeals</title>
+    <link rel="stylesheet" type="text/css", href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Gadget List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for gadget in gadgets %}
-                <tr>
-                    <td>{{ gadget.item_id }}</td>
-                    <td>{{ gadget.item_name }}</td>
-                    <td>{{ gadget.item_description }}</td>
-                    <td>
-                        <img src="{{ gadget.item_image }}" alt="{{ gadget.item_name }}" width="100" height="100">
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    {% block content %}
+    <header>
+        <!-- The navbar -->
+        <div class="top-bar">
+            <div class="site-icon">
+                <a href="{% url 'homepage' %}" style="font-size: x-large;">ElecDeals</a>
+            </div>
+
+            <div class="menu-bar">
+                <div class="menu-icon" id="menu-icon">
+                    <i class="fa fa-bars" style="font-size: x-large;"></i>
+                    <i class="fa fa-times" style="font-size: x-large;"></i>
+                </div>
+                
+                <div class="menu-links" id="menu-links">
+                    <ul>
+                        <p>Filter by Category</p>
+                        <li><a href="">Smartphones</a></li>
+                        <li><a href="">Laptops</a></li>
+                        <li><a href="">Desktops</a></li>
+                        <li><a href="">Tablets & ipads</a></li>
+                        <li><a href="">Smart watches</a></li>
+                        <li><a href="">TVs & Internet gadgets</a></li>
+                        <li><a href="">Other accessories</a></li>
+                        <hr>
+                        <li><a href="">Need help?</a></li>
+                        <li><a href="">contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+        var menuIcon = $("#menu-icon");
+        var menuLinks = $("#menu-links");
+        
+        menuIcon.click(function() {
+            menuLinks.slideToggle();
+            menuIcon.find(".fa-bars, .fa-times").toggle();
+        });
+        
+        $(document).click(function(event) {
+            if (!$(event.target).closest(".menu-bar").length) {
+                menuLinks.slideUp();
+                menuIcon.find(".fa-bars").show();
+                menuIcon.find(".fa-times").hide();
+            }
+        });
+        
+        $(".menu-bar").click(function(event) {
+            event.stopPropagation();
+        });
+    });
+    </script>
+{% endblock %}
 </body>
 </html>
