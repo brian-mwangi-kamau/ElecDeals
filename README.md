@@ -10,6 +10,6 @@ With __ElecDeals__, users can:
  - Use filters to narrow down product searches based on criteria such as product type (smartphones, laptops, desktops), item color, and price range.
 
 ## Live Web Application
-__ElecDeals__ is live and accessible at the following URL: [ElecDeals Web App.](https://elecdeals.pythonanywhere.com)
+__ElecDeals__ will be live, and accessible at the following URL: [ElecDeals Web App.](https://elecdeals.pythonanywhere.com)
 
 Explore electrical deals and find the perfect products to suit your needs!
